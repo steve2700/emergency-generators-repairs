@@ -6,6 +6,9 @@ import { HeroStage } from "@/components/hero-stage"
 import { RotatingWord } from "@/components/rotating-word"
 import { Typewriter } from "@/components/typewriter"
 import { WordReveal } from "@/components/word-reveal"
+import { ScrambleText } from "@/components/scramble-text"
+import { ScrollText } from "@/components/scroll-text"
+import { CountUp } from "@/components/count-up"
 import { FaultFinder } from "@/components/fault-finder"
 import { MaintenanceSteps } from "@/components/maintenance-steps"
 import { BrandTicker } from "@/components/brand-ticker"
@@ -16,6 +19,8 @@ import { Faq } from "@/components/faq"
 import { CtaBand } from "@/components/cta-band"
 import { SERVICES } from "@/lib/services"
 import { AREAS } from "@/lib/areas"
+import { BRANDS } from "@/lib/brands"
+import { FAULTS } from "@/lib/faults"
 
 export const metadata: Metadata = {
   title: { absolute: "Emergency Generator Repairs | Home and Business Generator Repairs in Gauteng" },
@@ -49,9 +54,7 @@ export default function Home() {
               </span>
               <span className="rise block" style={{ animationDelay: "360ms" }}>across Gauteng.</span>
             </h1>
-            <p className="rise mt-6 max-w-xl text-xl leading-relaxed text-graphite" style={{ animationDelay: "480ms" }}>
-              Emergency repairs, servicing and maintenance. Tell us what the generator is doing and we will tell you what it costs.
-            </p>
+            <WordReveal as="p" step={28} text="Emergency repairs, servicing and maintenance. Tell us what the generator is doing and we will tell you what it costs." className="mt-6 max-w-xl text-xl leading-relaxed text-graphite" />
             <div className="rise mt-8 flex flex-wrap gap-3" style={{ animationDelay: "600ms" }}>
               <CallButton pulse />
               <LinkButton href="/contact#job-card" look="outline">Get a Free Quote</LinkButton>
@@ -62,8 +65,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Statement and facts */}
+      <section className="mx-auto max-w-5xl px-5 py-20">
+        <ScrambleText text="THE REASON WE EXIST" className="font-mono text-xs tracking-widest text-chrome" />
+        <ScrollText className="mt-5 font-display text-3xl font-extrabold leading-[1.15] md:text-5xl" text="A generator that fails in an outage is worse than no generator at all, because you were counting on it. We repair them, service them before they fail, and keep homes and businesses running." />
+        <div className="mt-14 grid grid-cols-2 gap-6 md:grid-cols-4">
+          {[[SERVICES.length, "repair services"], [AREAS.length, "Gauteng areas"], [BRANDS.length, "engine and alternator brands"], [FAULTS.length, "common faults explained"]].map(([n, l]) => (
+            <div key={l as string} className="border-l-4 border-signal pl-4">
+              <CountUp to={n as number} className="font-display text-6xl font-extrabold md:text-7xl" />
+              <p className="mt-1 text-graphite">{l}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Who are you */}
       <section className="mx-auto max-w-7xl px-5 py-16">
+        <p className="mb-3"><ScrambleText text="01 WHO IS IT FOR" className="font-mono text-xs tracking-widest text-chrome" /></p>
         <WordReveal text="Who needs the generator fixed?" className="max-w-3xl text-4xl font-extrabold leading-[1.05] md:text-5xl" />
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {[
@@ -86,7 +104,8 @@ export default function Home() {
       {/* Fault finder */}
       <section className="bg-white py-20" id="fault-finder">
         <div className="mx-auto max-w-7xl px-5">
-          <WordReveal text="What is your generator doing?" className="max-w-3xl text-4xl font-extrabold leading-[1.05] md:text-5xl" mark={["doing"]} />
+          <p className="mb-3"><ScrambleText text="02 DIAGNOSE IT" className="font-mono text-xs tracking-widest text-chrome" /></p>
+        <WordReveal text="What is your generator doing?" className="max-w-3xl text-4xl font-extrabold leading-[1.05] md:text-5xl" mark={["doing"]} />
           <p className="mt-4 max-w-2xl text-lg text-graphite">Pick what you are seeing. We will show the usual causes and what we do about them, and you can send it to us in one tap.</p>
           <div className="mt-10"><FaultFinder /></div>
         </div>
@@ -95,7 +114,8 @@ export default function Home() {
       {/* Services */}
       <section className="mx-auto max-w-7xl px-5 py-20">
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
-          <WordReveal text="Every kind of generator repair" className="max-w-2xl text-4xl font-extrabold leading-[1.05] md:text-5xl" />
+          <div><p className="mb-3"><ScrambleText text="03 THE REPAIRS" className="font-mono text-xs tracking-widest text-chrome" /></p>
+        <WordReveal text="Every kind of generator repair" className="max-w-2xl text-4xl font-extrabold leading-[1.05] md:text-5xl" /></div>
           <LinkButton href="/services" look="dark" size="md">See all services</LinkButton>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -119,7 +139,8 @@ export default function Home() {
       <section className="cut-both bg-ink px-5 pb-28 pt-24 text-white">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 max-w-3xl">
-            <WordReveal text="Send your job card on WhatsApp" className="text-4xl font-extrabold leading-[1.05] md:text-5xl" mark={["WhatsApp"]} />
+            <p className="mb-3"><ScrambleText text="04 YOUR JOB CARD" className="font-mono text-xs tracking-widest text-signal" /></p>
+        <WordReveal text="Send your job card on WhatsApp" className="text-4xl font-extrabold leading-[1.05] md:text-5xl" mark={["WhatsApp"]} />
             <p className="mt-4 text-xl text-silver">A few quick answers and your generator is in our queue. If the power is out, call us as well.</p>
           </div>
           <JobCard />
@@ -128,6 +149,7 @@ export default function Home() {
 
       {/* Maintenance */}
       <section className="mx-auto max-w-7xl px-5 py-20">
+        <p className="mb-3"><ScrambleText text="05 PREVENT IT" className="font-mono text-xs tracking-widest text-chrome" /></p>
         <WordReveal text="Service it before the next outage" className="max-w-3xl text-4xl font-extrabold leading-[1.05] md:text-5xl" mark={["before"]} />
         <p className="mt-4 max-w-2xl text-lg text-graphite">A generator that has been serviced starts first time. This is what a proper service covers.</p>
         <div className="mt-10"><MaintenanceSteps /></div>
@@ -160,7 +182,8 @@ export default function Home() {
       {/* Areas */}
       <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-5">
-          <WordReveal text="Generator repairs near you in Gauteng" className="max-w-3xl text-4xl font-extrabold leading-[1.05] md:text-5xl" />
+          <p className="mb-3"><ScrambleText text="06 NEAR YOU" className="font-mono text-xs tracking-widest text-chrome" /></p>
+        <WordReveal text="Generator repairs near you in Gauteng" className="max-w-3xl text-4xl font-extrabold leading-[1.05] md:text-5xl" />
           <p className="mt-4 max-w-2xl text-lg text-graphite">We operate across Gauteng and its outskirts. Find your area to see how we help.</p>
           <div className="mt-8 flex flex-wrap gap-3">
             {AREAS.map((a) => (

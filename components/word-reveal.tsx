@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 
 /** Heading that reveals word by word when it scrolls into view. Words listed in `mark` get a yellow highlight. */
-export function WordReveal({ text, as: Tag = "h2", className = "", mark = [] }: { text: string; as?: "h1" | "h2" | "h3" | "p"; className?: string; mark?: string[] }) {
+export function WordReveal({ text, as: Tag = "h2", className = "", mark = [], step = 70 }: { text: string; as?: "h1" | "h2" | "h3" | "p"; className?: string; mark?: string[]; step?: number }) {
   const ref = useRef<HTMLElement | null>(null)
   const [on, setOn] = useState(false)
   useEffect(() => {
@@ -16,7 +16,7 @@ export function WordReveal({ text, as: Tag = "h2", className = "", mark = [] }: 
   const words = text.split(" ")
   const marks = mark.map((m) => m.toLowerCase())
   return (
-    <Tag ref={ref as never} className={`wr ${on ? "in" : ""} ${className}`}>
+    <Tag ref={ref as never} style={{ "--step": `${step}ms` } as React.CSSProperties} className={`wr ${on ? "in" : ""} ${className}`}>
       {words.map((w, i) => {
         const hit = marks.includes(w.toLowerCase().replace(/[^a-z]/g, ""))
         return (

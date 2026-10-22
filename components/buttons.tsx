@@ -7,7 +7,7 @@ import { SITE, WA_LINK } from "@/lib/site"
 import { trackCallClick, trackWhatsAppClick } from "@/lib/analytics"
 
 const base =
-  "inline-flex items-center justify-center gap-2.5 rounded-full font-display font-bold transition duration-200 active:scale-95 focus-visible:outline-offset-4"
+  "group inline-flex items-center justify-center gap-2.5 rounded-full font-display font-bold transition duration-200 active:scale-95 focus-visible:outline-offset-4"
 const sizes = { md: "h-12 px-7 text-lg", lg: "h-14 px-9 text-xl" }
 const looks = {
   red: "bg-signal text-ink hover:bg-signal-dark hover:shadow-lg hover:shadow-signal/40",
@@ -25,7 +25,7 @@ export function CallButton({ size = "lg", look = "red", label = "Call Now", puls
   return (
     <a href={`tel:${SITE.phoneTel}`} onClick={trackCallClick} className={`${base} ${sizes[size]} ${looks[look]} ${pulse ? "ring" : ""} ${className}`}>
       <PhoneIcon className="h-5 w-5" />
-      {label}
+      <span className="roll"><span>{label}</span><span aria-hidden="true">{label}</span></span>
     </a>
   )
 }
@@ -34,7 +34,7 @@ export function WhatsAppButton({ size = "lg", look = "green", label = "WhatsApp 
   return (
     <a href={WA_LINK(message)} target="_blank" rel="noopener noreferrer" onClick={trackWhatsAppClick} className={`${base} ${sizes[size]} ${looks[look]} ${className}`}>
       <WhatsAppIcon className="h-6 w-6" />
-      {label}
+      <span className="roll"><span>{label}</span><span aria-hidden="true">{label}</span></span>
     </a>
   )
 }
@@ -42,7 +42,7 @@ export function WhatsAppButton({ size = "lg", look = "green", label = "WhatsApp 
 export function LinkButton({ href, children, size = "lg", look = "dark", className = "" }: { href: string; children: ReactNode; size?: Size; look?: Look; className?: string }) {
   return (
     <Link href={href} className={`${base} ${sizes[size]} ${looks[look]} ${className}`}>
-      {children}
+      <span className="roll"><span>{children}</span><span aria-hidden="true">{children}</span></span>
     </Link>
   )
 }
