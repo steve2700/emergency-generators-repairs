@@ -3,43 +3,42 @@ import { PageHero } from "@/components/page-hero"
 import { Faq } from "@/components/faq"
 import { CtaBand } from "@/components/cta-band"
 import { MovingImage } from "@/components/moving-image"
-import { BrandStrip } from "@/components/brand-strip"
+import { BrandTicker } from "@/components/brand-ticker"
 import { CallButton, WhatsAppButton } from "@/components/buttons"
 
 export const metadata: Metadata = {
-  title: "Truck Repair FAQ",
-  description: "Answers to common questions about truck repairs, quotes, servicing, fleet maintenance and areas covered by Agents Diesel Services in Gauteng.",
+  title: "Generator Repair FAQ",
+  description: "Answers to common questions about generator repairs, servicing, maintenance plans, quotes and areas covered by Emergency Generator Repairs in Gauteng.",
   alternates: { canonical: "/faq" },
 }
 
 const items = [
-  { q: "What areas do you cover?", a: "We operate across Gauteng and its outskirts, including Johannesburg, Pretoria, Centurion, Midrand, Germiston, Kempton Park, Boksburg, Benoni, Alberton, Roodepoort, Krugersdorp and Vereeniging." },
-  { q: "How do I get a quote?", a: "Complete the job card on our website. It opens in WhatsApp, ready to send. Add photos of the problem and we will come back with a quote." },
-  { q: "Which truck brands do you repair?", a: "We work on Isuzu, Hino, UD Trucks, Scania and Mazda, and on other major heavy duty and commercial brands used in South Africa. Put your make and model on the job card and we will confirm." },
-  { q: "Can you repair accident damaged trucks?", a: "Yes. We rebuild front ends, repair cabs and bumpers, do panel beating and respray. See the before and after photos on our accident repairs page." },
-  { q: "What is truck bed rubberizing?", a: "It is a tough sprayed rubber coating for truck and bakkie beds. We repair and sand the bed first, then coat it for a non slip, scratch resistant finish." },
-  { q: "Can you repair trailers and tippers?", a: "Yes. We repair trailer axles, bearings, brakes, tipper bodies, flatbeds and hydraulics." },
-  { q: "Do you do spray painting?", a: "Yes. We respray cabs and bodies, repair accident damage and match fleet colours." },
-  { q: "Do you offer fleet maintenance?", a: "Yes. Tell us how many trucks you run and how far they travel and we will set up a service schedule." },
-  { q: "What if my truck has broken down on the road?", a: "Call us right away on the number at the top of the page, then send your job card with your location so we can plan the next step." },
-  { q: "Do you fit diesel tanks?", a: "Yes. We fit and repair aluminium and steel diesel tanks, and repair fuel system faults." },
+  { q: "What areas do you cover?", a: "We operate across Gauteng and its outskirts, including Johannesburg, Sandton, Pretoria, Centurion, Midrand, Randburg, Roodepoort, Krugersdorp, Germiston, Kempton Park, Boksburg and Benoni." },
+  { q: "How do I get a quote?", a: "Complete the job card on our website. It opens in WhatsApp, ready to send. Add photos of the generator and the fault and we will come back with a quote." },
+  { q: "My generator will not start. What should I check?", a: "Check that there is fuel, that the fuel is fresh, and that the battery is charged on electric start models. If it still will not start, call us. Please do not keep cranking it." },
+  { q: "Do you repair generators at my home or business?", a: "Yes. In most cases we repair on site. If a part must go to the workshop, we tell you before we take it." },
+  { q: "Which generators do you repair?", a: "Petrol and diesel generators, from small portable units to silent canopy and industrial sets, with engines such as Perkins, Cummins, Volvo, Deutz, John Deere, Yanmar and Caterpillar." },
+  { q: "Do you offer maintenance plans?", a: "Yes. Tell us how many generators you have and how often they run and we will set up a schedule that fits your home or business." },
+  { q: "How often should a generator be serviced?", a: "At least once a year, and more often if it runs a lot. Always follow the interval in your generator manual." },
+  { q: "My generator runs but nothing powers up. Why?", a: "It is usually the alternator, the AVR, a tripped breaker or a fault in the changeover or wiring. We test each one to find it." },
+  { q: "Is it worth repairing an old generator?", a: "Often yes. We diagnose first and give you an honest opinion, including when a repair does not make sense." },
 ]
 
 export default function FaqPage() {
   return (
     <>
-      <PageHero crumbs={[{ name: "FAQ", href: "/faq" }]} title="Truck repair questions, answered" image={{ src: "/truck-agents-mechanics-servicing-trucks-yard.jpg", alt: "Mechanics servicing trucks in the yard" }} text="Quick answers for owner drivers and fleet managers.">
+      <PageHero crumbs={[{ name: "FAQ", href: "/faq" }]} title="Generator repair questions, answered" mark={["answered"]} image={{ src: "/onsite-portable-generator-maintenance.jpg", alt: "Technician maintaining a portable generator at a home" }} text="Quick answers for homeowners and business owners.">
         <CallButton />
         <WhatsAppButton />
       </PageHero>
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[1.4fr_1fr]">
         <Faq items={items} />
         <div className="grid gap-5 self-start sm:grid-cols-2 lg:sticky lg:top-32 lg:grid-cols-1">
-          <MovingImage src="/truck-agents-ud-truck-cab-repair-restored-after.jpg" alt="UD truck cab restored after repair" className="aspect-[4/3] rounded-[2rem]" />
-          <MovingImage src="/truck-agents-truck-bed-rubberizing-after-coating.jpg" alt="Truck bed with a fresh rubberized coating" className="aspect-[4/3] rounded-[2rem]" variant={1} />
+          <MovingImage src="/portable-generators-lineup.jpg" alt="Portable generators lined up in a yard" className="aspect-[4/3] rounded-[2rem]" />
+          <MovingImage src="/refurbished-small-petrol-generator-engine.jpg" alt="Refurbished small petrol generator engine" className="aspect-[4/3] rounded-[2rem]" variant={1} />
         </div>
       </section>
-      <BrandStrip />
+      <BrandTicker />
       <CtaBand />
     </>
   )

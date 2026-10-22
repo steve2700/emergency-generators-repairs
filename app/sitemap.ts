@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const page = (path: string, priority: number, changeFrequency: "weekly" | "monthly" | "yearly" = "monthly") => ({ url: `${SITE.url}${path}`, lastModified: now, changeFrequency, priority })
   return [
     page("", 1, "weekly"),
+    page("/home-generator-repairs", 0.9),
+    page("/business-generator-repairs", 0.9),
     page("/services", 0.9),
     ...SERVICES.map((s) => page(`/services/${s.slug}`, 0.9)),
     page("/service-areas", 0.8),

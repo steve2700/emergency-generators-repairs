@@ -18,373 +18,268 @@ export interface Service {
   imageAlt: string
   headline: string
   intro: string
-  includes: string[]
-  signs: string[]
-  faqs: { q: string; a: string }[]
   answer: string
   problem: string
-  gallery?: BeforeAfterItem[]
+  includes: string[]
+  signs: string[]
   process?: { src: string; alt: string; caption: string }[]
+  gallery?: BeforeAfterItem[]
+  faqs: { q: string; a: string }[]
 }
 
-export const BA_HINO: BeforeAfterItem = {
-  title: "Hino accident repair",
-  before: "/truck-agents-hino-truck-accident-repair-front-damage-before.jpg",
-  after: "/truck-agents-hino-truck-accident-repair-panel-beating-after.jpg",
-  ratio: "3 / 2",
-  caption: "Hino truck with heavy front end damage, rebuilt with panel beating and paint.",
-  alt: "Hino truck accident repair, front damage before and panel beating after",
-}
-export const BA_UD: BeforeAfterItem = {
-  title: "UD cab and bumper repair",
-  before: "/truck-agents-ud-truck-cab-repair-damaged-bumper-before.jpg",
-  after: "/truck-agents-ud-truck-cab-repair-restored-after.jpg",
-  ratio: "1 / 1",
-  caption: "UD truck cab with a damaged bumper, restored and repainted.",
-  alt: "UD truck cab repair, damaged bumper before and restored cab after",
-}
-export const BA_BED: BeforeAfterItem = {
-  title: "Truck bed rubberizing",
-  before: "/truck-agents-truck-bed-rubberizing-before-damaged.jpg",
-  after: "/truck-agents-truck-bed-rubberizing-after-coating.jpg",
-  ratio: "1 / 1",
-  caption: "A worn, damaged truck bed, sanded and sprayed with a tough rubberized coating.",
-  alt: "Truck bed rubberizing, damaged bed before and coated bed after",
+export const BA_BOARD: BeforeAfterItem = {
+  title: "Distribution board rewired",
+  before: "/electrical-distribution-board-before.jpg",
+  after: "/electrical-distribution-board-after.jpg",
+  ratio: "5 / 8",
+  caption: "A tangled board with loose wiring, rebuilt with neat, labelled and safe connections.",
+  alt: "Electrical distribution board before and after rewiring",
 }
 
 export const SERVICES: Service[] = [
   {
-    slug: "heavy-duty-truck-repairs",
-    name: "Heavy Duty Truck Repairs",
-    short: "Breakdowns, faults and full repairs on trucks and truck tractors of every make.",
-    metaTitle: "Heavy Duty Truck Repairs in Gauteng",
+    slug: "emergency-generator-repairs",
+    name: "Emergency Generator Repairs",
+    short: "Generator will not start, cuts out or gives no power? We find the fault and fix it.",
+    metaTitle: "Emergency Generator Repairs in Gauteng",
     metaDescription:
-      "Heavy duty truck repairs across Gauteng. Engines, gearboxes, brakes, electrical and suspension fixed by experienced truck mechanics. Call Now or send a WhatsApp job card.",
-    keywords: ["heavy duty truck repairs Gauteng", "truck mechanic Johannesburg", "truck repair workshop Gauteng", "truck breakdown repairs"],
-    image: "/heavy-duty-truck-repairs.jpg",
-    imageAlt: "Heavy duty truck repairs in the Agents Diesel Services workshop in Gauteng",
-    headline: "Heavy duty truck repairs that get you back on the road",
+      "Emergency generator repairs for homes and businesses in Gauteng. Generator will not start, cuts out or gives no power? Call Now or send a WhatsApp job card for a fast quote.",
+    keywords: ["emergency generator repairs Gauteng", "generator repairs Johannesburg", "generator will not start", "generator technician near me", "generator breakdown repairs"],
+    image: "/technicians-servicing-nexus-generator.jpg",
+    imageAlt: "Technicians repairing a generator engine on site",
+    headline: "Emergency generator repairs for homes and businesses",
     intro:
-      "When a truck stands still, the money stops. Agents Diesel Services repairs heavy duty trucks, truck tractors, rigid trucks and light commercial vehicles across Gauteng. We find the fault, give you a clear quote and fix it properly.",
+      "When the power is out and the generator will not run, every hour matters. We diagnose the fault, give you a clear quote and repair petrol and diesel generators of all sizes across Gauteng.",
+    answer:
+      "Emergency Generator Repairs fixes generators that will not start, cut out, give no power or will not switch over, for homes and businesses across Gauteng, with a clear quote before work begins.",
+    problem: "Will not start",
     includes: [
-      "Fault finding and diagnostics",
-      "Engine, gearbox and diff repairs",
-      "Brake, clutch and suspension repairs",
-      "Electrical and wiring repairs",
-      "Cooling system and turbo repairs",
-      "Repairs on all major truck brands",
+      "Fault finding on petrol and diesel generators",
+      "Starting, fuel and ignition repairs",
+      "Carburettor and fuel pump work",
+      "Battery, starter and charging repairs",
+      "Overheating and cooling faults",
+      "Repairs on site where possible",
     ],
-    signs: ["Loss of power or heavy smoke", "Overheating or leaking fluids", "Warning lights on the dash", "Hard gear changes or clutch slip", "Brakes pulling or feeling weak"],
-    answer: "Agents Diesel Services repairs heavy duty trucks across Gauteng, including engines, gearboxes, brakes, electrical faults and suspension, and gives a clear quote before work starts.",
-    problem: "Engine problem",
-    faqs: [
-      { q: "Which truck brands do you repair?", a: "We work on Isuzu, Hino, UD Trucks, Scania and Mazda, and on other major heavy duty and commercial brands used on South African roads. Send your truck make and model on the job card and we will confirm." },
-      { q: "Can I get a quote before work starts?", a: "Yes. Send a WhatsApp job card with photos of the problem and we will come back with a clear quote before any work begins." },
-      { q: "Which areas do you cover?", a: "We operate across Gauteng and its outskirts, including Johannesburg, Pretoria, Centurion, Midrand, Germiston, Kempton Park, Boksburg and surrounds." },
-    ],
-  },
-  {
-    slug: "truck-engine-overhauls",
-    name: "Truck Engine Overhauls",
-    short: "Full diesel engine strip downs, rebuilds and overhauls for trucks.",
-    metaTitle: "Truck Engine Overhauls and Rebuilds in Gauteng",
-    metaDescription:
-      "Truck engine overhauls and diesel engine rebuilds in Gauteng. Strip down, inspection, machining and rebuild for Isuzu, Hino, UD, Scania and more. Get a free quote.",
-    keywords: ["truck engine overhaul Gauteng", "diesel engine rebuild Johannesburg", "Volvo truck engine repair", "truck engine reconditioning"],
-    image: "/truck-agents-volvo-heavy-duty-truck-engine.jpg",
-    imageAlt: "Volvo heavy duty truck engine ready for overhaul at Agents Diesel Services",
-    headline: "Truck engine overhauls done properly",
-    intro:
-      "A tired engine costs you in fuel, downtime and breakdowns. We strip, inspect and rebuild heavy duty diesel engines so your truck earns again, and we explain what each part of the job costs before we start.",
-    includes: [
-      "Engine removal and refitting",
-      "Full strip down and inspection",
-      "Head, liner, piston and bearing work",
-      "Turbo and injector refits",
-      "Gasket sets, seals and fresh fluids",
-      "Test run and final check",
-    ],
-    signs: ["Blue or black smoke", "Oil consumption going up", "Low compression or hard starting", "Knocking or unusual noises", "Coolant mixing with oil"],
-    answer: "Agents Diesel Services overhauls and rebuilds heavy duty diesel truck engines in Gauteng, with full strip down, inspection and a clear quote before work begins.",
-    problem: "Engine problem",
-    faqs: [
-      { q: "How long does an engine overhaul take?", a: "It depends on the engine and parts availability. After inspection we give you a realistic time frame on the quote." },
-      { q: "Is an overhaul better than a replacement engine?", a: "It depends on the condition of the block and your budget. We inspect first and tell you which option makes sense." },
-    ],
-  },
-  {
-    slug: "gearbox-and-transmission-repairs",
-    name: "Gearbox and Transmission Repairs",
-    short: "Manual and automated truck gearbox repairs, rebuilds and replacements.",
-    metaTitle: "Truck Gearbox and Transmission Repairs in Gauteng",
-    metaDescription:
-      "Truck gearbox and transmission repairs in Gauteng. Strip down, gear and bearing replacement, synchro repairs and rebuilds. Send a WhatsApp job card for a fast quote.",
-    keywords: ["truck gearbox repairs Gauteng", "truck transmission repair Johannesburg", "gearbox rebuild trucks", "clutch and gearbox truck"],
-    image: "/truck-agents-commercial-truck-transmission-unit.jpg",
-    imageAlt: "Commercial truck transmission unit removed for gearbox repair",
-    headline: "Gearbox and transmission repairs for trucks",
-    intro:
-      "Grinding gears, slipping drives and jumping out of gear all point to the gearbox. We remove, strip, repair and refit truck transmissions, and we show you the worn parts so you know exactly what was wrong.",
-    includes: [
-      "Gearbox removal and refitting",
-      "Gear, bearing and synchro replacement",
-      "Shaft and seal repairs",
-      "Clutch and release bearing work",
-      "Differential and propshaft checks",
-      "Gearbox oil and filter service",
-    ],
-    signs: ["Grinding when changing gear", "Gearbox jumping out of gear", "Whining noise in drive", "Oil leaks at the gearbox", "Clutch slipping or sticking"],
-    answer: "Agents Diesel Services repairs and rebuilds truck gearboxes and transmissions in Gauteng, replacing worn gears, bearings and synchros and refitting the unit.",
-    problem: "Gearbox or clutch",
-    faqs: [
-      { q: "Can you repair a gearbox without replacing it?", a: "Often yes. We strip the unit, replace the worn gears and bearings and rebuild it. If it is beyond repair we tell you honestly." },
-      { q: "Do you handle clutch replacements?", a: "Yes. Clutch work is usually done together with the gearbox so you only pay for the labour once." },
-    ],
-  },
-  {
-    slug: "truck-servicing-and-maintenance",
-    name: "Truck Servicing and Maintenance",
-    short: "Scheduled services and preventative maintenance to keep your fleet moving.",
-    metaTitle: "Truck Servicing and Maintenance in Gauteng",
-    metaDescription:
-      "Truck servicing and fleet maintenance in Gauteng. Oil and filter services, safety checks and scheduled maintenance plans for owner drivers and fleets. Call Now for a quote.",
-    keywords: ["truck service Gauteng", "fleet maintenance Johannesburg", "truck maintenance plans", "diesel truck service"],
-    image: "/truck-agents-white-box-truck-engine-service.jpg",
-    imageAlt: "White box truck on a lift during an engine service",
-    headline: "Truck servicing and maintenance that prevents breakdowns",
-    intro:
-      "A planned service is cheaper than a breakdown on the N1. We service single trucks and whole fleets, and we keep a record of what was done so you always know when the next job is due.",
-    includes: [
-      "Oil, fuel and air filter services",
-      "Greasing and fluid top ups",
-      "Brake and tyre checks",
-      "Belts, hoses and cooling checks",
-      "Pre trip and roadworthy inspections",
-      "Service records for fleet owners",
-    ],
-    signs: ["Service interval is due", "Fuel use is climbing", "Trip is coming up", "Roadworthy test is due", "New truck added to your fleet"],
-    answer: "Agents Diesel Services services trucks and runs scheduled maintenance for owner drivers and fleets across Gauteng, so problems are caught before they cause a breakdown.",
-    problem: "Service or maintenance",
-    faqs: [
-      { q: "Do you offer fleet maintenance plans?", a: "Yes. Tell us how many trucks you run and how far they travel and we will set up a service schedule that fits." },
-      { q: "Can you service my truck at my yard?", a: "For selected jobs and areas, yes. Send a job card with your location and we will confirm what we can do." },
-    ],
-  },
-  {
-    slug: "truck-spray-painting-and-cab-repairs",
-    name: "Truck Spray Painting and Cab Repairs",
-    short: "Panel beating, cab repairs and full truck respraying in your fleet colours.",
-    metaTitle: "Truck Spray Painting and Cab Repairs in Gauteng",
-    metaDescription:
-      "Truck spray painting, cab repairs and panel work in Gauteng. Full cab resprays, accident repairs and fleet colour matching. Send photos on WhatsApp for a free quote.",
-    keywords: ["truck spray painting Gauteng", "truck cab respray", "commercial vehicle panel beating", "truck bodywork repairs"],
-    image: "/truck-agents-ud-truck-cab-repair-restored-after.jpg",
-    imageAlt: "UD truck cab repaired and repainted by Agents Diesel Services",
-    headline: "Truck spray painting and cab repairs",
-    intro:
-      "A clean, well painted truck tells clients you run a serious business. We repair and respray cabs, bodies and panels, and we match your fleet colours so every truck looks the part.",
-    includes: [
-      "Full cab and body resprays",
-      "Accident damage and panel repairs",
-      "Surface prep, masking and primer",
-      "Fleet colour matching",
-      "Door, bumper and fibreglass repairs",
-      "Clear coat and polish",
-    ],
-    signs: ["Faded or peeling paint", "Rust patches on the cab", "Accident damage", "New fleet branding", "Cracked fibreglass or bumpers"],
-    gallery: [BA_UD],
+    signs: ["Will not start", "Starts then cuts out", "No power at the sockets", "Smoke, noise or leaks", "Failed when the power went off"],
     process: [
-      { src: "/truck-agents-truck-cab-respraying-workshop.jpg", alt: "Truck cab masked and prepared for respraying", caption: "Masked and prepped" },
-      { src: "/truck-agents-truck-cab-spray-painting-prep.jpg", alt: "Truck cab covered ready for spray painting", caption: "Ready for paint" },
+      { src: "/team-generator-engine-valve-adjustment.jpg", alt: "Technicians adjusting engine valves on a generator", caption: "Valve adjustment" },
+      { src: "/onsite-portable-generator-maintenance.jpg", alt: "Technician repairing a portable generator at a home", caption: "Repair at your home" },
+      { src: "/technicians-testing-silent-diesel-generators.jpg", alt: "Technicians testing silent diesel generators", caption: "Testing under load" },
     ],
-    answer: "Agents Diesel Services repairs and respray truck cabs and bodies in Gauteng, including fleet colour matching, accident touch ups and full cab resprays.",
-    problem: "Spray painting or cab repair",
     faqs: [
-      { q: "Can you match my fleet colours?", a: "Yes. Send us the paint code or a clear photo and we will match it as closely as possible." },
-      { q: "Can I get a quote from photos?", a: "Yes. Photos from a few angles on WhatsApp are usually enough for a first quote." },
+      { q: "Do you repair generators at my home or business?", a: "Yes. In most cases we repair on site. If a part must go to the workshop we tell you first." },
+      { q: "Which generators do you repair?", a: "Petrol and diesel generators, from small portable units to silent canopy sets, including sets with Perkins, Cummins, Volvo, Deutz, John Deere, Yanmar and Caterpillar engines." },
+      { q: "How do I get a quote?", a: "Send a WhatsApp job card with the generator brand, what it is doing and your area. Add photos in the chat and we will come back with a quote." },
     ],
   },
   {
-    slug: "diesel-tank-fitting-and-fuel-system-repairs",
-    name: "Diesel Tank Fitting and Fuel System Repairs",
-    short: "Fuel tank fitting, repairs, injectors and fuel pumps for trucks.",
-    metaTitle: "Diesel Tank Fitting and Fuel System Repairs in Gauteng",
+    slug: "diesel-generator-repairs-and-engine-overhauls",
+    name: "Diesel Generator Repairs and Engine Overhauls",
+    short: "Diesel engine repairs, valve work, cylinder heads and full overhauls.",
+    metaTitle: "Diesel Generator Repairs and Engine Overhauls in Gauteng",
     metaDescription:
-      "Diesel tank fitting and truck fuel system repairs in Gauteng. Aluminium and steel tanks, injectors, fuel pumps and fuel leaks fixed fast. Call Now or WhatsApp us.",
-    keywords: ["diesel tank fitting Gauteng", "truck fuel tank repairs", "injector and fuel pump repairs", "aluminium diesel tank truck"],
-    image: "/truck-agents-aluminum-diesel-fuel-tank.jpg",
-    imageAlt: "Aluminium diesel fuel tank with straps ready to fit on a truck",
-    headline: "Diesel tank fitting and fuel system repairs",
+      "Diesel generator repairs and engine overhauls in Gauteng. Cylinder heads, pistons, valves, injectors and smoke or knocking faults repaired. Call Now or send a WhatsApp job card.",
+    keywords: ["diesel generator repairs Gauteng", "generator engine overhaul", "diesel generator service Johannesburg", "Perkins generator repairs", "cylinder head overhaul generator"],
+    image: "/diesel-generator-fawde-engine-bay.jpg",
+    imageAlt: "Diesel generator engine bay opened for repair",
+    headline: "Diesel generator repairs and engine overhauls",
     intro:
-      "Fuel problems cost money every kilometre. We fit new and replacement diesel tanks, repair leaks and service the whole fuel system, from the tank to the injectors.",
+      "A diesel engine that smokes, knocks or loses power is telling you something. We strip, inspect and repair the engine so the generator is reliable the next time it is needed.",
+    answer:
+      "Emergency Generator Repairs repairs and overhauls diesel generator engines in Gauteng, including cylinder heads, pistons, valves and injectors, for sets with Perkins, Cummins, Volvo, Deutz and other engines.",
+    problem: "Smoke or burning smell",
     includes: [
-      "Aluminium and steel tank fitting",
-      "Tank brackets, straps and lines",
-      "Fuel leak repairs",
+      "Cylinder head and valve work",
+      "Piston, ring and liner repairs",
       "Injector and fuel pump repairs",
-      "Fuel filter and water separator service",
-      "Bleeding and test run",
+      "Turbo and cooling system repairs",
+      "Full engine strip down and overhaul",
+      "Gasket sets, seals and fresh fluids",
     ],
-    signs: ["Diesel smell or visible leaks", "Hard starting or stalling", "Black smoke and low power", "Damaged or dented tank", "Water in the fuel"],
-    answer: "Agents Diesel Services fits and repairs aluminium and steel diesel tanks and services truck fuel systems, including injectors and fuel pumps, across Gauteng.",
-    problem: "Diesel tank or fuel system",
-    faqs: [
-      { q: "Can you fit a larger diesel tank?", a: "Yes. Tell us the truck model and the tank size you need and we will advise on fitment." },
-      { q: "Do you repair injectors?", a: "Yes. We test and repair or replace injectors and fuel pumps as part of fuel system work." },
-    ],
-  },
-  {
-    slug: "trailer-axle-and-bearing-maintenance",
-    name: "Trailer Axle and Bearing Maintenance",
-    short: "Axle, hub and wheel bearing repairs for trailers and truck rear ends.",
-    metaTitle: "Trailer Axle and Wheel Bearing Maintenance in Gauteng",
-    metaDescription:
-      "Trailer axle repairs and wheel bearing maintenance in Gauteng. Hubs, bearings, seals and brakes for trailers and trucks. Call Now or WhatsApp a job card for a quote.",
-    keywords: ["trailer axle repairs Gauteng", "wheel bearing replacement truck", "trailer maintenance Johannesburg", "hub and brake repairs trailer"],
-    image: "/truck-agents-trailer-axle-and-bearing-maintenance.webp",
-    imageAlt: "Trailer axle hub and bearing parts laid out during maintenance",
-    headline: "Trailer axle and bearing maintenance",
-    intro:
-      "Worn bearings and dry hubs end with a wheel off on the road. We strip, inspect, repack and replace axle and bearing components on trailers and truck rear ends before they let you down.",
-    includes: [
-      "Wheel bearing replacement",
-      "Hub, seal and race repairs",
-      "Axle straightening checks",
-      "Trailer brake and drum work",
-      "Suspension bush and spring repairs",
-      "Repacking and greasing",
-    ],
-    signs: ["Hot hubs after a trip", "Grease leaking at the wheel", "Wheel wobble or noise", "Uneven tyre wear", "Brakes dragging on the trailer"],
-    answer: "Agents Diesel Services maintains trailer axles, hubs and wheel bearings across Gauteng, preventing wheel failures with inspection, repacking and replacement.",
-    problem: "Trailer axle or bearings",
-    faqs: [
-      { q: "How often should trailer bearings be checked?", a: "At every service and before long trips. Heavy loads and rough roads mean more frequent checks." },
-      { q: "Do you work on superlink trailers?", a: "Yes. We repair and maintain axles and bearings on a range of trailers. Tell us the trailer type on your job card." },
-    ],
-  },
-  {
-    slug: "tipper-and-trailer-body-repairs",
-    name: "Tipper and Trailer Body Repairs",
-    short: "Repairs and fabrication for tipper bodies, flatbeds and trailers.",
-    metaTitle: "Tipper and Trailer Body Repairs in Gauteng",
-    metaDescription:
-      "Tipper body, flatbed and trailer repairs in Gauteng. Welding, fabrication, hydraulics and floor repairs for tippers and trailers. Send a WhatsApp job card for a free quote.",
-    keywords: ["tipper body repairs Gauteng", "flatbed truck repairs", "trailer body repairs Johannesburg", "truck welding and fabrication"],
-    image: "/truck-agents-orange-tipper-truck-trailer.jpg",
-    imageAlt: "Orange tipper trailer after body repairs and painting",
-    headline: "Tipper and trailer body repairs",
-    intro:
-      "Your body earns the money, so it has to be sound. We weld, fabricate and repair tipper bodies, flatbeds and trailers, and we paint them so the repair lasts.",
-    includes: [
-      "Welding and fabrication",
-      "Floor, side and tailgate repairs",
-      "Hydraulic ram and hose repairs",
-      "Flatbed and loadbed repairs",
-      "Tail lifts, rails and guards",
-      "Painting and protective coatings",
-    ],
-    signs: ["Cracks or worn floors", "Tailgate not sealing", "Slow or uneven tipping", "Damaged side rails", "Body paint and rust damage"],
-    answer: "Agents Diesel Services repairs tipper bodies, flatbeds and trailers in Gauteng, including welding, fabrication, hydraulics and protective painting.",
-    problem: "Tipper or body repair",
-    faqs: [
-      { q: "Can you repair hydraulic tipping systems?", a: "Yes. We repair rams, hoses and valves as part of tipper body work." },
-      { q: "Do you do custom fabrication?", a: "Yes. Send us the details and photos and we will quote on the fabrication." },
-    ],
-  },
-  {
-    slug: "truck-wheel-tyre-and-brake-repairs",
-    name: "Truck Wheel, Tyre and Brake Repairs",
-    short: "Wheel, hub, tyre and brake work to keep loaded trucks safe.",
-    metaTitle: "Truck Wheel, Tyre and Brake Repairs in Gauteng",
-    metaDescription:
-      "Truck wheel, tyre and brake repairs in Gauteng. Brake relines, drums, air brake systems, hubs and wheel alignment checks. Call Now for fast truck brake repairs.",
-    keywords: ["truck brake repairs Gauteng", "air brake repairs trucks", "truck wheel and hub repairs", "truck tyre and wheel Johannesburg"],
-    image: "/truck-agents-chrome-truck-wheel-tire.jpg",
-    imageAlt: "Chrome truck wheel and tyre on a heavy duty truck",
-    headline: "Truck wheel, tyre and brake repairs",
-    intro:
-      "Brakes and wheels carry the most risk on a loaded truck. We inspect, repair and replace brake and wheel components so your truck stops straight and rolls true.",
-    includes: [
-      "Brake relining and drum work",
-      "Air brake lines, valves and chambers",
-      "Wheel hub and stud repairs",
-      "Tyre fitting and rotation",
-      "Brake balance checks",
-      "Roadworthy preparation",
-    ],
-    signs: ["Brake pedal feels soft", "Air leaks when parked", "Truck pulls to one side", "Vibration at speed", "Worn or damaged tyres"],
-    answer: "Agents Diesel Services repairs truck brakes, wheels, hubs and air brake systems in Gauteng and prepares trucks for roadworthy tests.",
-    problem: "Brakes",
-    faqs: [
-      { q: "Can you prepare my truck for a roadworthy?", a: "Yes. We check and repair the items that matter for the test so your truck is ready to pass." },
-      { q: "Do you repair air brake systems?", a: "Yes. We repair valves, lines, chambers and compressors on air brake systems." },
-    ],
-  },
-  {
-    slug: "truck-accident-repairs-and-panel-beating",
-    name: "Truck Accident Repairs and Panel Beating",
-    short: "Front end rebuilds, cab repairs and panel beating after accidents.",
-    metaTitle: "Truck Accident Repairs and Panel Beating in Gauteng",
-    metaDescription:
-      "Truck accident repairs and panel beating in Gauteng. Front end damage, cab repairs, bumpers and full resprays for Hino, UD, Isuzu and more. See before and after photos and get a quote.",
-    keywords: ["truck accident repairs Gauteng", "truck panel beating Johannesburg", "Hino accident repair", "UD truck cab repair", "commercial vehicle collision repair"],
-    image: "/truck-agents-hino-truck-accident-repair-panel-beating-after.jpg",
-    imageAlt: "Hino truck after accident repair and panel beating in Gauteng",
-    headline: "Truck accident repairs and panel beating",
-    intro:
-      "An accident does not have to end a truck. We rebuild damaged fronts, repair cabs and bumpers, straighten panels and repaint, so the truck goes back to work looking right. Look at the before and after photos below.",
-    includes: [
-      "Front end and cab rebuilds",
-      "Panel beating and straightening",
-      "Bumper, grille and light repairs",
-      "Fibreglass and body filler work",
-      "Full cab and body resprays",
-      "Quotes from photos for insurers and owners",
-    ],
-    signs: ["Front end or cab damage", "Cracked or missing bumper", "Dented doors and panels", "Insurance quote needed", "Truck needs to look right for clients"],
-    answer: "Agents Diesel Services rebuilds and repairs accident damaged trucks in Gauteng, including Hino and UD cabs, with panel beating, bumper repairs and full resprays. Send photos on WhatsApp for a quote.",
-    problem: "Accident damage or panel beating",
-    gallery: [BA_HINO, BA_UD],
-    faqs: [
-      { q: "Can you repair a truck with heavy front damage?", a: "Yes. We have rebuilt Hino trucks with serious front end damage. Send photos from a few angles and we will tell you what is possible and what it costs." },
-      { q: "Do you work with insurance quotes?", a: "Yes. We can provide a written quote from photos or after inspection that you can send to your insurer." },
-      { q: "Will the paint match?", a: "We match the cab colour as closely as possible, and for fleets we can match your fleet colour code." },
-    ],
-  },
-  {
-    slug: "truck-bed-rubberizing",
-    name: "Truck Bed Rubberizing",
-    short: "Tough sprayed rubber coating for bakkie and truck beds.",
-    metaTitle: "Truck Bed Rubberizing and Bed Liner Coating in Gauteng",
-    metaDescription:
-      "Truck bed rubberizing and spray on bed liner coating in Gauteng. Repair, sand and coat damaged truck beds for a tough, non slip finish. See before and after photos and get a free quote.",
-    keywords: ["truck bed rubberizing Gauteng", "bakkie bed liner Johannesburg", "spray on bed liner", "truck bed coating", "rubberized truck bed"],
-    image: "/truck-agents-truck-bed-rubberizing-after-coating.jpg",
-    imageAlt: "Truck bed after rubberized coating by Agents Diesel Services",
-    headline: "Truck bed rubberizing that protects your load bed",
-    intro:
-      "A worn, rusty or damaged bed loses value fast. We repair the bed, sand and prepare the surface, then spray a tough rubberized coating that grips loads, resists scratches and keeps water out.",
-    includes: [
-      "Bed repair and rust treatment",
-      "Full sanding and surface prep",
-      "Rubberized spray coating",
-      "Non slip, scratch resistant finish",
-      "Bakkie and light truck beds",
-      "Fleet bed protection",
-    ],
-    signs: ["Rust or bare metal in the bed", "Deep scratches and dents", "Loads sliding around", "New truck needs protection", "Resale value is dropping"],
-    answer: "Agents Diesel Services repairs, sands and sprays a rubberized coating on bakkie and truck beds in Gauteng for a tough, non slip, scratch resistant finish.",
-    problem: "Bed liner or rubberizing",
-    gallery: [BA_BED],
+    signs: ["Blue, black or white smoke", "Heavy knocking", "Loss of power under load", "Oil use going up", "Hard starting when warm"],
     process: [
-      { src: "/truck-agents-truck-bed-rubberizing-before-damaged.jpg", alt: "Damaged truck bed before rubberizing", caption: "Damaged bed" },
-      { src: "/truck-agents-truck-bed-rubberizing-prep-sanding.jpg", alt: "Truck bed sanded and prepared for rubberized coating", caption: "Sanded and prepped" },
-      { src: "/truck-agents-truck-bed-rubberizing-after-coating.jpg", alt: "Finished rubberized truck bed", caption: "Coated and finished" },
+      { src: "/diesel-engine-piston-carbon-buildup.jpg", alt: "Diesel engine pistons with heavy carbon build up", caption: "Carbon build up found" },
+      { src: "/generator-cylinder-head-overhaul.jpg", alt: "Generator cylinder head overhaul", caption: "Cylinder head overhaul" },
+      { src: "/team-generator-engine-valve-adjustment.jpg", alt: "Team adjusting valves on a generator engine", caption: "Valve adjustment" },
     ],
     faqs: [
-      { q: "How long does bed rubberizing take?", a: "It depends on the condition of the bed. We repair and sand first, then spray. We give you a time frame with your quote." },
-      { q: "Can you rubberize a damaged bed?", a: "Yes. We repair damage and treat rust first so the coating bonds well and lasts." },
-      { q: "Do you coat fleet trucks?", a: "Yes. Tell us how many trucks you have and we will quote for the fleet." },
+      { q: "Is an overhaul better than replacing the generator?", a: "Often yes. A properly overhauled engine costs far less than a new set. We inspect first and tell you honestly which option makes sense." },
+      { q: "Which diesel engines do you work on?", a: "Perkins, Cummins, Volvo, Deutz, John Deere, Yanmar and Caterpillar, among others." },
+    ],
+  },
+  {
+    slug: "petrol-and-portable-generator-repairs",
+    name: "Petrol and Portable Generator Repairs",
+    short: "Portable and small petrol generators repaired, serviced and refurbished.",
+    metaTitle: "Petrol and Portable Generator Repairs in Gauteng",
+    metaDescription:
+      "Petrol and portable generator repairs in Gauteng. Carburettors, spark plugs, recoil starters, engine rebuilds and refurbishments for home generators. Call Now or send a job card.",
+    keywords: ["portable generator repairs Gauteng", "petrol generator repairs Johannesburg", "generator carburettor repair", "home generator service", "generator engine rebuild"],
+    image: "/refurbished-small-petrol-generator-engine.jpg",
+    imageAlt: "Refurbished small petrol generator engine",
+    headline: "Petrol and portable generator repairs",
+    intro:
+      "Portable generators work hard during load shedding and they fail at the worst time. We repair carburettors, starters and engines, and we refurbish tired units so they run like they should.",
+    answer:
+      "Emergency Generator Repairs repairs and services petrol and portable generators for Gauteng homes, including carburettors, recoil starters, spark plugs, engine rebuilds and refurbishment.",
+    problem: "Will not start",
+    includes: [
+      "Carburettor cleaning and repair",
+      "Spark plug, coil and ignition faults",
+      "Recoil and electric starter repairs",
+      "Engine rebuilds and refurbishment",
+      "Fuel system and tank cleaning",
+      "Oil changes and full services",
+    ],
+    signs: ["Pull cord does nothing", "Runs rough or surges", "Will not hold a load", "Old fuel has gummed it up", "Smoking or leaking"],
+    process: [
+      { src: "/dismantled-portable-generator-frame-before-repair.jpg", alt: "Portable generator frame dismantled before repair", caption: "Stripped for repair" },
+      { src: "/portable-generators-lineup.jpg", alt: "Portable generators lined up after service", caption: "Serviced and ready" },
+      { src: "/onsite-portable-generator-maintenance.jpg", alt: "Technician servicing a portable generator at a home", caption: "Service at your home" },
+    ],
+    faqs: [
+      { q: "Is it worth repairing an old petrol generator?", a: "Usually yes. Most petrol generator faults are fuel or ignition problems that cost far less to fix than a new generator." },
+      { q: "Why will my generator not start after months in storage?", a: "Old petrol leaves gum in the carburettor. Cleaning or rebuilding the carburettor and replacing the fuel usually fixes it." },
+    ],
+  },
+  {
+    slug: "generator-servicing-and-maintenance",
+    name: "Generator Servicing and Maintenance",
+    short: "Scheduled services and maintenance plans so your generator works when the power fails.",
+    metaTitle: "Generator Servicing and Maintenance in Gauteng",
+    metaDescription:
+      "Generator servicing and maintenance plans for homes and businesses in Gauteng. Oil, filters, battery, load testing and changeover tests. Call Now or send a WhatsApp job card.",
+    keywords: ["generator servicing Gauteng", "generator maintenance plans", "generator service Johannesburg", "generator load test", "preventative generator maintenance"],
+    image: "/technicians-testing-silent-diesel-generators.jpg",
+    imageAlt: "Technicians servicing and testing silent diesel generators",
+    headline: "Generator servicing and maintenance before the next outage",
+    intro:
+      "The best time to service a generator is before you need it. We service and load test generators, and we set up maintenance plans for homes, offices and businesses so nothing is left to chance.",
+    answer:
+      "Emergency Generator Repairs services and maintains generators across Gauteng, including oil and filters, battery checks, load testing and changeover tests, with maintenance plans for homes and businesses.",
+    problem: "Service or maintenance",
+    includes: [
+      "Oil and filter changes",
+      "Fuel system and air filter service",
+      "Battery and starter test",
+      "Coolant, hoses and belts check",
+      "Load test and output check",
+      "Changeover test and service record",
+    ],
+    signs: ["Service interval is due", "Has not run for months", "Load shedding season is coming", "New generator needs its first service", "You want a maintenance plan"],
+    process: [
+      { src: "/on-site-generator-canopy-service.jpg", alt: "Technician servicing a canopy generator on site", caption: "On site service" },
+      { src: "/technicians-servicing-nexus-generator.jpg", alt: "Technicians servicing a generator engine", caption: "Full engine service" },
+      { src: "/generator-engine-maintenance.jpg", alt: "Generator engine during maintenance", caption: "Engine maintenance" },
+    ],
+    faqs: [
+      { q: "How often should a generator be serviced?", a: "Most generators should be serviced at least once a year, and more often if they run a lot. Follow the interval in the generator manual." },
+      { q: "Do you offer maintenance plans for businesses?", a: "Yes. Tell us how many generators you have and how often they run, and we will set up a schedule that fits." },
+      { q: "Do you load test generators?", a: "Yes. A load test shows whether the generator can really carry your load, which a simple start does not." },
+    ],
+  },
+  {
+    slug: "changeover-switches-and-electrical-repairs",
+    name: "Changeover Switches and Electrical Repairs",
+    short: "Changeover switches, distribution boards, alternator and AVR faults repaired.",
+    metaTitle: "Generator Changeover and Electrical Repairs in Gauteng",
+    metaDescription:
+      "Generator changeover switch, distribution board and alternator repairs in Gauteng. Generator runs but no power or will not switch over? Call Now or send a WhatsApp job card.",
+    keywords: ["generator changeover switch", "generator electrical repairs Gauteng", "alternator AVR repair", "distribution board repair", "generator will not switch over"],
+    image: "/electrical-distribution-board-after.jpg",
+    imageAlt: "Neatly rewired electrical distribution board",
+    headline: "Changeover switches and electrical repairs",
+    intro:
+      "A generator that runs but does not power the building is an electrical fault. We test changeover switches, distribution boards, alternators and wiring, and repair what has failed.",
+    answer:
+      "Emergency Generator Repairs repairs changeover switches, distribution boards, alternators and AVRs across Gauteng, fixing generators that run but give no power or will not switch over.",
+    problem: "Will not switch over",
+    gallery: [BA_BOARD],
+    includes: [
+      "Changeover switch and contactor repairs",
+      "Distribution board rewiring and upgrades",
+      "Alternator and AVR testing and repair",
+      "Control wiring and sensor faults",
+      "Output and earth leakage checks",
+      "Power cut simulation test",
+    ],
+    signs: ["Generator runs but nothing powers up", "Will not switch over automatically", "Trips the breaker", "Burning smell at the board", "Messy or unsafe wiring"],
+    process: [
+      { src: "/generator-electrical-panel.jpg", alt: "Generator changeover contactors and wiring", caption: "Changeover contactors" },
+    ],
+    faqs: [
+      { q: "Why does my generator run but nothing works?", a: "It is usually the alternator, the AVR, a tripped breaker or a fault in the changeover or wiring. We test each one to find it." },
+      { q: "Can you fix a messy distribution board?", a: "Yes. We rewire and tidy boards so they are safe and easy to work on. See the before and after photos on this page." },
+    ],
+  },
+  {
+    slug: "silent-canopy-and-industrial-generator-repairs",
+    name: "Silent Canopy and Industrial Generator Repairs",
+    short: "Repairs and servicing for silent canopy and industrial standby generators.",
+    metaTitle: "Silent Canopy and Industrial Generator Repairs in Gauteng",
+    metaDescription:
+      "Silent canopy and industrial generator repairs in Gauteng. Standby generators for businesses, factories and estates repaired and serviced. Call Now or send a WhatsApp job card.",
+    keywords: ["industrial generator repairs Gauteng", "silent generator repairs", "canopy generator service", "commercial generator maintenance", "standby generator repairs"],
+    image: "/industrial-generator-exterior.jpg",
+    imageAlt: "Silent industrial canopy generator installed outside a building",
+    headline: "Silent canopy and industrial generator repairs",
+    intro:
+      "A standby generator protects your stock, your equipment and your income. We repair and maintain silent canopy and industrial generators so they start and carry the load when the grid fails.",
+    answer:
+      "Emergency Generator Repairs repairs and maintains silent canopy and industrial standby generators for businesses, factories and estates across Gauteng, including full services and load tests.",
+    problem: "Service or maintenance",
+    includes: [
+      "Canopy generator repairs and servicing",
+      "Controller and auto start faults",
+      "Automatic changeover testing",
+      "Diesel engine repairs and overhauls",
+      "Proper load testing",
+      "Service records for business owners",
+    ],
+    signs: ["Failed to start in an outage", "Controller showing a fault", "Overdue for a service", "Overheating under load", "Business cannot afford downtime"],
+    process: [
+      { src: "/commercial-yellow-generator.jpg", alt: "Yellow commercial canopy generator", caption: "Commercial canopy set" },
+      { src: "/technicians-testing-silent-diesel-generators.jpg", alt: "Technicians testing silent diesel generators", caption: "Testing silent sets" },
+      { src: "/on-site-generator-canopy-service.jpg", alt: "Technician servicing a canopy generator", caption: "Canopy service" },
+    ],
+    faqs: [
+      { q: "Do you maintain generators for businesses?", a: "Yes. We service and maintain business generators and can set up regular schedules." },
+      { q: "Can you repair auto start generators?", a: "Yes. We repair controllers, sensors and changeover systems that start the generator automatically." },
+    ],
+  },
+  {
+    slug: "trailer-mounted-and-mobile-generator-repairs",
+    name: "Trailer Mounted and Mobile Generator Repairs",
+    short: "Repairs for trailer mounted generators, frames, tanks and mountings.",
+    metaTitle: "Trailer Mounted and Mobile Generator Repairs in Gauteng",
+    metaDescription:
+      "Trailer mounted and mobile generator repairs in Gauteng. Engines, frames, fuel tanks, mountings and wiring repaired. Call Now or send a WhatsApp job card for a quote.",
+    keywords: ["trailer mounted generator repairs", "mobile generator repairs Gauteng", "generator frame repair", "generator fuel tank repair", "portable diesel generator trailer"],
+    image: "/trailer-mounted-generator.jpg",
+    imageAlt: "Trailer mounted generator parked at a home",
+    headline: "Trailer mounted and mobile generator repairs",
+    intro:
+      "Mobile generators take a beating from the road and the work site. We repair the engine, the frame, the fuel tank and the mountings so your mobile power is ready to roll.",
+    answer:
+      "Emergency Generator Repairs repairs trailer mounted and mobile generators across Gauteng, including engines, frames, fuel tanks, mountings and wiring.",
+    problem: "Something else",
+    includes: [
+      "Engine and alternator repairs",
+      "Frame, bracket and mounting repairs",
+      "Fuel tank, lines and gasket replacement",
+      "Wiring, sockets and breaker panels",
+      "Trailer lights and towing checks",
+      "Full service and load test",
+    ],
+    signs: ["Cracked or damaged frame", "Fuel leaks from the tank", "Vibration on the mountings", "Sockets or breakers failing", "Needs a full service"],
+    process: [
+      { src: "/generator-base-frame-and-gaskets-rebuild.jpg", alt: "Generator base frame with gaskets laid out during a rebuild", caption: "Frame and gaskets" },
+      { src: "/disassembled-generator-repair-kit.jpg", alt: "Disassembled generator parts laid out on the grass", caption: "Stripped for repair" },
+    ],
+    faqs: [
+      { q: "Can you repair a trailer mounted generator at my site?", a: "Often yes. Tell us where it is and what the problem is, and we will confirm how we can help." },
+      { q: "Do you repair generator frames and tanks?", a: "Yes. We repair frames and mountings and replace or repair fuel tanks, lines and gaskets." },
     ],
   },
 ]

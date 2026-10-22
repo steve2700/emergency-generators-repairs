@@ -1,13 +1,12 @@
-// TEMPORARY PLACEHOLDERS: swap these when the client confirms the real details.
-// Every phone, WhatsApp and email link on the site reads from this one file.
+// Contact details for Emergency Generator Repairs. Change them here and the whole site updates.
 export const SITE = {
-  name: "Agents Diesel Services",
-  url: "https://www.agentsdieselservices.co.za",
-  phoneDisplay: "073 237 3002",
-  phoneTel: "+27732373002",
-  whatsapp: "27732373002",
-  email: "info@agentsdieselservices.co.za",
-  tagline: "Repairs, Services & Maintenance",
+  name: "Emergency Generator Repairs",
+  url: "https://www.emergencygeneratorrepairs.co.za",
+  phoneDisplay: "073 441 0501",
+  phoneTel: "+27734410501",
+  whatsapp: "27734410501",
+  email: "info@emergencygeneratorrepairs.co.za",
+  tagline: "Homes and businesses",
   region: "Gauteng and its outskirts",
 }
 

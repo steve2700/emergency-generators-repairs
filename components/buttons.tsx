@@ -7,10 +7,10 @@ import { SITE, WA_LINK } from "@/lib/site"
 import { trackCallClick, trackWhatsAppClick } from "@/lib/analytics"
 
 const base =
-  "inline-flex items-center justify-center gap-2.5 rounded-full font-display font-semibold tracking-wide transition duration-200 active:scale-95 focus-visible:outline-offset-4"
-const sizes = { md: "h-12 px-7 text-xl", lg: "h-14 px-9 text-2xl" }
+  "inline-flex items-center justify-center gap-2.5 rounded-full font-display font-bold transition duration-200 active:scale-95 focus-visible:outline-offset-4"
+const sizes = { md: "h-12 px-7 text-lg", lg: "h-14 px-9 text-xl" }
 const looks = {
-  red: "bg-signal text-white hover:bg-signal-dark hover:shadow-lg hover:shadow-signal/30",
+  red: "bg-signal text-ink hover:bg-signal-dark hover:shadow-lg hover:shadow-signal/40",
   dark: "bg-ink text-white hover:bg-graphite",
   outline: "border-2 border-ink text-ink hover:bg-ink hover:text-white",
   outlineLight: "border-2 border-white/70 text-white hover:bg-white hover:text-ink",
@@ -30,7 +30,7 @@ export function CallButton({ size = "lg", look = "red", label = "Call Now", puls
   )
 }
 
-export function WhatsAppButton({ size = "lg", look = "green", label = "WhatsApp Us", message = "Hi Agents Diesel Services, I need help with my truck.", className = "" }: { size?: Size; look?: Look; label?: string; message?: string; className?: string }) {
+export function WhatsAppButton({ size = "lg", look = "green", label = "WhatsApp Us", message = "Hi Emergency Generator Repairs, I need help with my generator.", className = "" }: { size?: Size; look?: Look; label?: string; message?: string; className?: string }) {
   return (
     <a href={WA_LINK(message)} target="_blank" rel="noopener noreferrer" onClick={trackWhatsAppClick} className={`${base} ${sizes[size]} ${looks[look]} ${className}`}>
       <WhatsAppIcon className="h-6 w-6" />
@@ -47,10 +47,9 @@ export function LinkButton({ href, children, size = "lg", look = "dark", classNa
   )
 }
 
-/** Round icon only buttons */
 export function CircleCall({ className = "" }: { className?: string }) {
   return (
-    <a href={`tel:${SITE.phoneTel}`} onClick={trackCallClick} aria-label={`Call Agents Diesel Services on ${SITE.phoneDisplay}`} className={`flex h-12 w-12 items-center justify-center rounded-full bg-signal text-white transition hover:bg-signal-dark active:scale-95 ${className}`}>
+    <a href={`tel:${SITE.phoneTel}`} onClick={trackCallClick} aria-label={`Call Emergency Generator Repairs on ${SITE.phoneDisplay}`} className={`flex h-12 w-12 items-center justify-center rounded-full bg-signal text-ink transition hover:bg-signal-dark active:scale-95 ${className}`}>
       <PhoneIcon className="h-5 w-5" />
     </a>
   )

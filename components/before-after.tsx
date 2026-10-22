@@ -37,11 +37,11 @@ export function BeforeAfter({ item, className = "" }: { item: BeforeAfterItem; c
         <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
           <Image src={item.before} alt="" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
         </div>
-        <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-ink/85 px-4 py-1 font-display text-xl font-semibold text-white">Before</span>
-        <span className="pointer-events-none absolute right-4 top-4 rounded-full bg-signal px-4 py-1 font-display text-xl font-semibold text-white">After</span>
+        <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-ink/85 px-4 py-1 font-display text-xl font-bold text-white">Before</span>
+        <span className="pointer-events-none absolute right-4 top-4 rounded-full bg-signal px-4 py-1 font-display text-xl font-bold text-ink">After</span>
         <Image src="/logo-mark.svg" alt="" width={56} height={27} className="pointer-events-none absolute bottom-3 right-3 drop-shadow-[0_2px_6px_rgba(0,0,0,.6)]" />
         <div className="pointer-events-none absolute inset-y-0 w-1 -translate-x-1/2 bg-white shadow-[0_0_12px_rgba(0,0,0,.5)]" style={{ left: `${pos}%` }}>
-          <span className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-signal font-display text-2xl text-white shadow-lg">&lsaquo;&rsaquo;</span>
+          <span className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-signal font-display text-2xl text-ink shadow-lg">&lsaquo;&rsaquo;</span>
         </div>
         <input
           type="range" min={0} max={100} step={0.5} value={pos}

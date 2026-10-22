@@ -1,59 +1,51 @@
 import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { MovingImage } from "@/components/moving-image"
-import { CtaBand } from "@/components/cta-band"
 import { BeforeAfter } from "@/components/before-after"
-import { BA_HINO, BA_UD, BA_BED } from "@/lib/services"
+import { CtaBand } from "@/components/cta-band"
 import { CallButton, LinkButton } from "@/components/buttons"
+import { BA_BOARD } from "@/lib/services"
 
 export const metadata: Metadata = {
-  title: "Truck Repair Gallery",
-  description: "Photos from the Agents Diesel Services workshop: engine overhauls, gearbox repairs, spray painting, diesel tank fitting, trailer axles and tipper bodies in Gauteng.",
+  title: "Generator Repair Gallery",
+  description: "Photos of generator repairs, servicing and electrical work by Emergency Generator Repairs across Gauteng, including a distribution board before and after.",
   alternates: { canonical: "/gallery" },
 }
 
 const photos: [string, string][] = [
-  ["/truck-agents-hino-truck-accident-repair-panel-beating-after.jpg", "Hino truck after accident repair"],
-  ["/truck-agents-ud-truck-cab-repair-restored-after.jpg", "UD truck cab restored after repair"],
-  ["/truck-agents-truck-bed-rubberizing-after-coating.jpg", "Truck bed with rubberized coating"],
-  ["/truck-agents-truck-bed-rubberizing-prep-sanding.jpg", "Truck bed sanded before rubberizing"],
-  ["/truck-agents-white-international-semi-truck.jpg", "White International truck tractor"],
-  ["/truck-agents-volvo-heavy-duty-truck-engine.jpg", "Volvo heavy duty truck engine"],
-  ["/truck-agents-aluminum-diesel-fuel-tank.jpg", "Aluminium diesel fuel tank"],
-  ["/truck-agents-orange-tipper-truck-trailer.jpg", "Orange tipper trailer"],
-  ["/truck-agents-chrome-truck-wheel-tire.jpg", "Chrome truck wheel and tyre"],
-  ["/truck-agents-truck-diesel-tank-fitting.jpg", "Diesel tank fitted to a truck"],
-  ["/truck-agents-mechanics-servicing-trucks-yard.jpg", "Mechanics servicing trucks in the yard"],
-  ["/truck-agents-flatbed-truck-transport-equipment.jpg", "Flatbed truck transporting equipment"],
-  ["/heavy-duty-truck-repairs.jpg", "Heavy duty truck repairs in the workshop"],
-  ["/heavy_duty_truck_repairs.jpg", "Truck with the cab tilted for engine access"],
-  ["/heavy-truck-repairs-shop.jpg", "Heavy truck on the lift"],
-  ["/truck-agents-blue-semi-truck-repair-shop.jpg", "Blue truck tractor under repair"],
-  ["/truck-agents-white-box-truck-engine-service.jpg", "White box truck engine service"],
-  ["/truck-agents-truck-cab-respraying-workshop.jpg", "Truck cab respraying"],
-  ["/truck-agents-truck-cab-spray-painting-prep.jpg", "Truck cab spray painting preparation"],
-  ["/truck-agents-commercial-truck-cab-bodywork.jpg", "Commercial truck cab bodywork"],
-  ["/truck-agents-commercial-truck-transmission-unit.jpg", "Commercial truck transmission unit"],
-  ["/truck-agents-heavy-duty-gearbox-internal-gears.jpg", "Heavy duty gearbox internal gears"],
-  ["/truck-agents-heavy-duty-engine-overhaul-workshop.jpg", "Engine overhaul in the workshop"],
-  ["/truck-agents-transmission-loaded-on-pickup-truck.jpg", "Transmission loaded on a bakkie"],
-  ["/truck-agents-trailer-axle-and-bearing-maintenance.webp", "Trailer axle and bearing maintenance"],
+  ["/industrial-generator-exterior.jpg", "Silent industrial generator installed outside"],
+  ["/technicians-servicing-nexus-generator.jpg", "Technicians servicing a generator engine"],
+  ["/portable-generators-lineup.jpg", "Portable generators lined up in a yard"],
+  ["/trailer-mounted-generator.jpg", "Trailer mounted generator"],
+  ["/diesel-generator-fawde-engine-bay.jpg", "Diesel generator engine bay"],
+  ["/refurbished-small-petrol-generator-engine.jpg", "Refurbished small petrol generator engine"],
+  ["/residential-generator-unit.jpg", "Residential generator unit"],
+  ["/technicians-testing-silent-diesel-generators.jpg", "Technicians testing silent diesel generators"],
+  ["/diesel-engine-piston-carbon-buildup.jpg", "Diesel engine pistons with carbon build up"],
+  ["/team-generator-engine-valve-adjustment.jpg", "Team adjusting engine valves"],
+  ["/dismantled-portable-generator-frame-before-repair.jpg", "Portable generator frame dismantled for repair"],
+  ["/on-site-generator-canopy-service.jpg", "Technician servicing a canopy generator"],
+  ["/onsite-portable-generator-maintenance.jpg", "Portable generator maintenance at a home"],
+  ["/generator-base-frame-and-gaskets-rebuild.jpg", "Generator base frame and gaskets during a rebuild"],
+  ["/commercial-yellow-generator.jpg", "Yellow commercial canopy generator"],
+  ["/generator-cylinder-head-overhaul.jpg", "Generator cylinder head overhaul"],
+  ["/generator-electrical-panel.jpg", "Generator changeover contactors and wiring"],
+  ["/disassembled-generator-repair-kit.jpg", "Disassembled generator parts laid out"],
 ]
 
 export default function GalleryPage() {
   return (
     <>
-      <PageHero crumbs={[{ name: "Gallery", href: "/gallery" }]} title="Work from our workshop" image={{ src: "/truck-agents-hino-truck-accident-repair-panel-beating-after.jpg", alt: "Hino truck after accident repair" }} text="Real trucks, real repairs. Every job here came in on a job card.">
+      <PageHero crumbs={[{ name: "Gallery", href: "/gallery" }]} title="Our work, on site and in the workshop" mark={["work"]} image={{ src: "/team-generator-engine-valve-adjustment.jpg", alt: "Team adjusting engine valves on a generator" }} text="Real generators, real repairs. Every job here started with a call or a job card.">
         <CallButton />
         <LinkButton href="/contact#job-card" look="outlineLight">Get a Free Quote</LinkButton>
       </PageHero>
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-7xl px-5">
-          <h2 className="text-5xl font-bold md:text-6xl">Before and after</h2>
-          <div className="mt-10 grid gap-8 lg:grid-cols-3">
-            <BeforeAfter item={BA_HINO} />
-            <BeforeAfter item={BA_UD} />
-            <BeforeAfter item={BA_BED} />
+      <section className="bg-white py-16">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 lg:grid-cols-2">
+          <div className="max-w-md"><BeforeAfter item={BA_BOARD} /></div>
+          <div>
+            <h2 className="text-3xl font-extrabold md:text-4xl">Before and after</h2>
+            <p className="mt-4 max-w-lg text-lg text-graphite">A tangled distribution board, rebuilt so it is safe, neat and easy to work on. Drag the slider to compare.</p>
           </div>
         </div>
       </section>

@@ -1,16 +1,16 @@
 import { MovingImage } from "@/components/moving-image"
 
-const photos = [
-  ["/truck-agents-hino-truck-accident-repair-panel-beating-after.jpg", "Hino truck after accident repair"],
-  ["/truck-agents-truck-bed-rubberizing-prep-sanding.jpg", "Truck bed sanded before rubberizing"],
-  ["/truck-agents-blue-semi-truck-repair-shop.jpg", "Blue truck tractor in the repair shop"],
-  ["/truck-agents-heavy-duty-gearbox-internal-gears.jpg", "Heavy duty gearbox internal gears"],
-  ["/truck-agents-truck-cab-spray-painting-prep.jpg", "Truck cab prepared for spray painting"],
-  ["/truck-agents-flatbed-truck-transport-equipment.jpg", "Flatbed truck transporting equipment"],
-  ["/truck-agents-transmission-loaded-on-pickup-truck.jpg", "Truck transmission loaded on a bakkie"],
-  ["/truck-agents-commercial-truck-cab-bodywork.jpg", "Commercial truck cab bodywork"],
-  ["/heavy_duty_truck_repairs.jpg", "Heavy duty truck repairs with the cab tilted"],
-  ["/truck-agents-truck-diesel-tank-fitting.jpg", "Diesel tank fitting on a truck"],
+const photos: [string, string][] = [
+  ["/portable-generators-lineup.jpg", "Portable generators lined up in a yard"],
+  ["/team-generator-engine-valve-adjustment.jpg", "Team adjusting engine valves"],
+  ["/trailer-mounted-generator.jpg", "Trailer mounted generator"],
+  ["/refurbished-small-petrol-generator-engine.jpg", "Refurbished petrol generator engine"],
+  ["/technicians-testing-silent-diesel-generators.jpg", "Technicians testing silent diesel generators"],
+  ["/diesel-engine-piston-carbon-buildup.jpg", "Diesel engine pistons with carbon build up"],
+  ["/industrial-generator-exterior.jpg", "Silent industrial generator"],
+  ["/onsite-portable-generator-maintenance.jpg", "Portable generator maintenance at a home"],
+  ["/electrical-distribution-board-after.jpg", "Rewired distribution board"],
+  ["/residential-generator-unit.jpg", "Residential generator unit"],
 ]
 
 export function PhotoStrip() {
@@ -19,7 +19,7 @@ export function PhotoStrip() {
     <div className="overflow-hidden" aria-label="Recent work">
       <div className="strip flex w-max gap-4">
         {all.map(([src, alt], i) => (
-          <MovingImage key={i} src={src} alt={i < photos.length ? alt : ""} variant={i} sizes="320px" className="h-64 w-80 shrink-0 rounded-[2rem]" markWidth={48} />
+          <MovingImage key={i} src={src} alt={i < photos.length ? alt : ""} variant={i} sizes="320px" className="h-64 w-72 shrink-0 rounded-[2rem]" markWidth={40} />
         ))}
       </div>
     </div>
